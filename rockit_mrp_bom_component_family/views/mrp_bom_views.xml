@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_bom_form_view" model="ir.ui.view">
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp_bom_attribute_match.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bom_line_ids']//field[@name='component_template_id']" position="after">
+                <field name="component_family_ids" widget="many2many_tags" optional="show" />
+            </xpath>
+            <xpath expr="//field[@name='bom_line_ids']//field[@name='component_template_id']" position="attributes">
+                <attribute name="readonly">component_family_ids</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

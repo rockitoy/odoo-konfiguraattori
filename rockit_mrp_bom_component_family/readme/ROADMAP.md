@@ -1,0 +1,1 @@
+- Families are matched in line order; a rule-based choice (formulas) is not supported yet.
